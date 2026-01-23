@@ -1,18 +1,12 @@
 <?php
-// Function for Submit Reservation Logic
 function processReservation() {
-    // Check if the form was submitted using POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
-        // Validation: Ensure necessary information is supplied [cite: 1462]
         if (empty($_POST['txtName']) || empty($_POST['rdoCapacity']) || 
             empty($_POST['rdoType']) || empty($_POST['rdoPayment'])) {
             
-            // Prompt user if room capacity, type, or payment is missing [cite: 1463]
             echo "<script>alert('Incomplete information! Please select all fields.');</script>";
         } else {
-            // If valid, redirect to the billing calculation page [cite: 1461]
-            // We can pass the POST data via Session to the next page
             session_start();
             $_SESSION['reservation_data'] = $_POST;
             header("Location: billing_output.php");
@@ -21,12 +15,11 @@ function processReservation() {
     }
 }
 
-// Call the function to execute the logic
 processReservation();
 ?>
 
 <div class="reservation-box">
-    <form method="post" action="">
+    <form method="post" action="billing_output.php">
         <p>Customer Name: <input type="text" name="txtName" placeholder="Enter Full Name"></p>
         <p>Contact Number: <input type="text" name="txtContact" placeholder="e.g. 09170000000"></p>
         
