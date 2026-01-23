@@ -1,16 +1,12 @@
 <?php
 session_start();
 
-// Redirect back if no data is found
 if (!isset($_POST['txtName']) && !isset($_SESSION['reservation_data'])) {
     header("Location: reservation_form.php");
     exit();
 }
 
-// Get data from POST or SESSION
 $data = $_POST; 
-
-// Simple Pricing Logic
 $rates = ["Single" => 100, "Double" => 150, "Family" => 250];
 $multipliers = ["Regular" => 1.0, "De Luxe" => 1.2, "Suite" => 1.5];
 
@@ -18,7 +14,6 @@ $basePrice = $rates[$data['rdoCapacity']] ?? 0;
 $multiplier = $multipliers[$data['rdoType']] ?? 1.0;
 $totalPerNight = $basePrice * $multiplier;
 
-// Calculate Nights
 $date1 = new DateTime($data['dateFrom']);
 $date2 = new DateTime($data['dateTo']);
 $nights = $date1->diff($date2)->days;
@@ -60,7 +55,7 @@ $grandTotal = $totalPerNight * $nights;
     <div class="row total-row"><span>Grand Total:</span> <span>$<?php echo number_format($grandTotal, 2); ?></span></div>
 
     <a href="#" onclick="window.print();" class="btn">Print Receipt</a>
-    <a href="your_form_page.php" class="btn" style="background:#7f8c8d;">Back to Reservation</a>
+    <a href="index.php" class="btn" style="background:#7f8c8d;">Back to Reservation</a>
 </div>
 
 </body>
