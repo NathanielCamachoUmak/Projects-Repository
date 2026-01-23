@@ -1,5 +1,5 @@
 <?php 
-session_start(); // Starts the session to store user info on the server
+session_start();
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 ?>
 <!DOCTYPE html>
@@ -36,7 +36,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
     <div class="content">
         <?php 
-            // The switch statement handles the "dynamic" part of the page
             switch($page) {
                 case 'home': 
                     echo "<h2>Welcome to Our Hotel</h2><p>Experience world-class service and unparalleled luxury in the heart of the city.</p>";
@@ -48,11 +47,9 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                     echo "<h2>Contact Us</h2><p>Address: West Rembo, Taguig City<br>Email: stay@dahotel.com<br>Phone: 0917-8051962</p>"; 
                     break;
                 case 'reservation': 
-                    // This includes the external form file
                     include('reservation_form.php'); 
                     break;
                 case 'lab_exercises':
-                    // This is where you would link to your redesigned 6 labs
                     echo "<h2>Redesigned Lab Exercises</h2><p>Select a lab from the sidebar or dashboard.</p>";
                     break;
                 default: 
@@ -62,4 +59,5 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
         ?>
     </div>
 </body>
+
 </html>
