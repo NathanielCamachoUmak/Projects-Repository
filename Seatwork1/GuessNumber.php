@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>TERMINAL_DECISION_LOGIC</title>
+    <title>Practice Exercise #3</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body style="font-family: 'Courier New', Courier, monospace; text-align: center; padding-top: 50px;">

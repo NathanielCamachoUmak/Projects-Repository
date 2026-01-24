@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>TERMINAL_DATA_ENTRY_V2</title>
+    <title>Practice Exercise #2</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>

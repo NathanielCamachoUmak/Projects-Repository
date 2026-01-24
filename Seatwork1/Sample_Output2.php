@@ -13,7 +13,7 @@ $bill = is_numeric($_POST['txtBill']) ? $_POST['txtBill'] : "ERROR: UNAUTHORIZED
 
 <html>
 <head>
-    <title>TERMINAL_VALIDATION_RESULT</title>
+    <title>Practice Exercise #2</title>
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
