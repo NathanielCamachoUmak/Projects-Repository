@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <title> PAPSI Holidays - The Inscription </title> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=MedievalSharp&display=swap');
+
+        body {
+            background-color: #0a0a0a;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            color: #d4af37;
+            font-family: 'MedievalSharp', cursive;
+            display: flex;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .ritual-box {
+            background: #1a0a0a;
+            border: 3px double #8b0000;
+            padding: 40px;
+            width: 500px;
+            box-shadow: 0 0 50px #000, inset 0 0 20px #4a0000;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'UnifrakturMaguntia', serif;
+            color: #ff0000;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ff0000;
+        }
+
+        b { color: #8b0000; letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 20px;}
+
+        .option-container {
+            text-align: left;
+            margin: 15px auto;
+            width: fit-content;
+        }
+
+        input[type="radio"] {
+            accent-color: #ff0000;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .btn-invoke {
+            background: #8b0000;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-family: 'UnifrakturMaguntia', serif;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn-invoke:hover {
+            background: #ff0000;
+            box-shadow: 0 0 15px #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ritual-box">
+    <h2>PAPSI Holidays</h2>
+    <p>Choose thy destination and sanctuary level...</p>
+    
+    <form action="Holiday.php" method="post">
+        <b>Select Thy Realm</b>
+        <div class="option-container">
+            <input type="radio" name="rdoDestination" value="HongKong" checked> HongKong <br>
+            <input type="radio" name="rdoDestination" value="Singapore"> Singapore <br>
+            <input type="radio" name="rdoDestination" value="Malaysia"> Malaysia <br>
+        </div>
+
+        <b>Accommodation Level</b>
+        <div class="option-container">
+            <input type="radio" name="rdoHotel" value="three" checked> Three Star Sanctuary <br>
+            <input type="radio" name="rdoHotel" value="five"> Five Star Domain <br>
+        </div>
+
+        <input type="submit" value="Seal the Reservation" class="btn-invoke">
+    </form>
+</div>
+
+</body>
+</html>
